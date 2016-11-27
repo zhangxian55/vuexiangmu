@@ -1,0 +1,279 @@
+{
+	"errno": 0,
+	"data": {
+		"ad": [
+			{
+				"title": "推荐",
+				"beforeprice": "200",
+				"price":"99",
+				"id": "1",
+				"url": "01.jpg"
+			},
+			{
+				"title": "省钱",
+				"beforeprice": "318",
+				"price":"78",
+				"id": "2",
+				"url": "02.jpg"
+			},
+			{
+				"title": "手慢无",
+                "beforeprice": "438",
+				"price":"269",
+				"id": "3",
+				"url": "03.jpg"
+			},
+			{
+				"title": "推荐",
+				"beforeprice": "200",
+				"price":"99",
+				"id": "1",
+				"url": "01.jpg"
+			},
+			{
+				"title": "省钱",
+				"beforeprice": "318",
+				"price":"78",
+				"id": "2",
+				"url": "02.jpg"
+			},
+			{
+				"title": "手慢无",
+                "beforeprice": "438",
+				"price":"269",
+				"id": "3",
+				"url": "03.jpg"
+			},
+			{
+				"title": "推荐",
+				"beforeprice": "200",
+				"price":"99",
+				"id": "1",
+				"url": "01.jpg"
+			},
+			{
+				"title": "省钱",
+				"beforeprice": "318",
+				"price":"78",
+				"id": "2",
+				"url": "02.jpg"
+			},
+			{
+				"title": "手慢无",
+                "beforeprice": "438",
+				"price":"269",
+				"id": "3",
+				"url": "03.jpg"
+			}
+
+		],
+		"chaoshihui1": [
+			{
+				"title": "推荐",
+				"beforeprice": "200",
+				"price":"99",
+				"id": "4",
+				"url": "big1.jpg"
+			},
+			{
+				"title": "省钱",
+				"beforeprice": "318",
+				"price":"78",
+				"id": "5",
+				"url": "big2.jpg"
+			},
+			{
+				"title": "推荐",
+				"beforeprice": "200",
+				"price":"99",
+				"id": "4",
+				"url": "big3.jpg"
+			},
+			{
+				"title": "省钱",
+				"beforeprice": "318",
+				"price":"78",
+				"id": "5",
+				"url": "big4.jpg"
+			}
+		],
+		"chaoshihui2": [
+			{
+				"title": "推荐",
+				"beforeprice": "200",
+				"price":"99",
+				"id": "6",
+				"url": "small1.jpg"
+			},
+			{
+				"title": "省钱",
+				"beforeprice": "318",
+				"price":"78",
+				"id": "7",
+				"url": "small2.jpg"
+			},
+			{
+				"title": "手慢无",
+                "beforeprice": "438",
+				"price":"269",
+				"id": "8",
+				"url": "small3.jpg"
+			},
+			{
+				"title": "手慢无",
+                "beforeprice": "438",
+				"price":"269",
+				"id": "9",
+				"url": "small4.jpg"
+			},{
+				"title": "推荐",
+				"beforeprice": "200",
+				"price":"99",
+				"id": "6",
+				"url": "small5.jpg"
+			},
+			{
+				"title": "省钱",
+				"beforeprice": "318",
+				"price":"78",
+				"id": "7",
+				"url": "small6.jpg"
+			},
+			{
+				"title": "手慢无",
+                "beforeprice": "438",
+				"price":"269",
+				"id": "8",
+				"url": "small7.jpg"
+			},
+			{
+				"title": "手慢无",
+                "beforeprice": "438",
+				"price":"269",
+				"id": "9",
+				"url": "small8.jpg"
+			}
+		],
+		"licai": [
+			{
+				"title": "推荐",
+				"beforeprice": "200",
+				"price":"99",
+				"id": "6",
+				"url": "licai1.jpg"
+			},
+			{
+				"title": "省钱",
+				"beforeprice": "318",
+				"price":"78",
+				"id": "7",
+				"url": "licai2.jpg"
+			},
+			{
+				"title": "手慢无",
+                "beforeprice": "438",
+				"price":"269",
+				"id": "8",
+				"url": "licai3.jpg"
+			},
+			{
+				"title": "手慢无",
+                "beforeprice": "438",
+				"price":"269",
+				"id": "9",
+				"url": "licai4.jpg"
+			}
+		],
+		"touzi":[
+			{
+				"title": "手慢无",
+                "beforeprice": "438",
+				"price":"269",
+				"id": "9",
+				"url": "licai5.jpg"
+			}
+		],
+		"list": [
+			{
+				"img": "new1.jpg",
+				"title": "Nucelle纽芝兰 女包2016新款斜挎包秋冬韩版时尚百搭单肩小猪包女士小包包时尚黑均码",
+				"comment": 44,
+				"price":208,
+				"like": 128,
+				"id": "10"
+			},
+			{
+				"img": "new2.jpg",
+				"title": "张小泉 七件套刀 菜刀具组合 含剪刀 亚克力刀座 N5493",
+				"comment": 101,
+				"price": 149.9,
+				"like": 30,
+				"id": "2"
+			},
+			{
+				"img": "new3.jpg",
+				"title": "利快 【买就送】Berndes宝迪三层通体不锈钢无烟不粘无涂层炒菜锅中华大炒锅 32cm",
+				"comment": 241,
+				"price": 599.0,
+				"like": 105,
+				"id": "3"
+			},
+			{
+				"img": "new4.jpg",
+				"title": "Oldenburger欧德堡 超高温灭菌全脂牛奶 纯牛奶 4.8L（200mL/盒*24盒）/箱 德国进口",
+				"comment": 1326,
+				"price": 59,
+				"like": 60,
+				"id": "4"
+			},
+			{
+				"img": "new5.jpg",
+				"title": "康师傅 老陈醋 酸辣牛肉面 119g/桶",
+				"comment": 990,
+				"price": 4,
+				"like": 70,
+				"id": "5"
+			},
+			{
+				"img": "new6.jpg",
+				"title": "蓝月亮 深层洁净亮白增艳洗衣液立袋 薰衣草香 500g",
+				"comment": 8,
+				"price": 8.8,
+				"like": 260,
+				"id": "6"
+			},
+			{
+				"img": "new7.jpg",
+				"title": "良品铺子 沙拉薯条 45g/袋",
+				"comment": 3,
+				"price": 3.4,
+				"like": 300,
+				"id": "7"
+			},
+			{
+				"img": "new8.jpg",
+				"title": "品客 酸乳酪洋葱味薯片 110g/罐",
+				"comment": 1226,
+				"price": 8.9,
+				"like": 305,
+				"id": "8"
+			},
+			{
+				"img": "new9.jpg",
+				"title": "乐扣乐扣（lock&lock）旅行用品便携套装（五件套）LTZ965DG005",
+				"comment": 11,
+				"price": 79,
+				"like": 338,
+				"id": "9"
+			},
+			{
+				"img": "new10.jpg",
+				"title": "空间优品 旅行袋 大容量时尚手提包 条纹衣物整理袋 蓝条纹",
+				"comment": 90,
+				"price": 49.9,
+				"like": 148,
+				"id": "10"
+			}
+		]
+	}
+}

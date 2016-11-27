@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, width=device-width">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+
+<div id="app">
+    <div class="begin" id="begin">
+       <p><img src="img/icon/begin.jpg"></p>
+       <span class="begin-login" v-on:click="">下载APP</span>
+       <span class="begin-look"  v-on:click="scroll" >继续浏览</span>
+    </div>
+     <span class="gototop" id="gototop"  v-on:click='gototop'>返回<br>顶部</span>
+	<div class="search"  v-show="view !='login'">   
+        <span class="logo1" v-show="view =='home'"></span>   
+            <div class="go-back" v-on:click="goBack" v-show="view !='home' " style="display: none">
+                 <span class="arrow"><span class="arrow white"></span></span>
+            </div>
+        <div class="search-main">
+              <input  v-if="view!='login'" v-model="searchKey" type="text" placeholder="请输入搜索关键字" v-on:keyup.enter=  "goSearch">
+	         <button  v-if="view!='login'" class="search-btn" v-on:click="goSearch"><img src="img/item/btn.png"     ></button>
+        </div>
+	    <span  v-if="view!='login'" class="login" v-on:click="gologin"></span>
+	</div>
+	<component v-bind:is="view" v-bind:key= "myKey" ></component>
+</div>
+<script type="text/template" id="tpl_home">
+      <!-- 轮播图1 -->
+         <div class="swipe" id="slider">
+			<ul class="swipe-wrap" id="carrousellis">
+				<li v-for="item in tuozhuaidata">
+					<a href="#/list/type/{{item.id}}">
+						<img v-bind:src="'img/tuozhuai/'+item.url" v-on:load='lunbo()'>
+					</a>
+				</li>
+			</ul>
+			<ul class="circles">
+               <li class="cur"></li>
+                <li v-for="item in tuozhuaidata"></li>
+			</ul>
+		</div>
+		<!-- 导航板 -->
+	<section id="home" class="home">
+		<ul class="type-list clearfix">
+			<li v-for="item in type">
+				<a href="#/list/type/{{item.id}}">
+					<img v-bind:src="'img/icon/' + item.url" alt="">
+					<span>{{item.title}}</span>
+				</a>
+			</li>
+		</ul> 
+		<h2 class="daojishi" id="daojishi" >
+		   <p class="miaosha">秒杀:</p>
+		    <b  class="time"></b>
+		    <span>{{time[0]}}</span>:<span>{{time[1]}}</span>:<span>{{time[2]}}</span>:<span>{{time[3]}}</span>      
+	      </h2>
+		
+		<div id="box">
+		    <ul class="ad-list clearfix"  id="unit">
+				<li v-for="item in ad" ">
+					<img v-bind:src="'img/ad/' + item.url" alt="" v-on:load="huadong()">
+					<span class="biaoqian">{{item.title}}</span>
+					<span class="nowprice">￥{{item.price}}</span>
+					<span class="beforeprice">￥{{item.beforeprice}}</span>
+				</li>
+			</ul>
+	</div>
+	<div class="chaoshihui">
+	    <div class="pinpaihui">
+	      <span class="liner1"></span>
+	      <p>品牌惠</p>
+	      <span class="liner2"></span>
+	    </div>
+	  
+	  <p class="bigpicture">
+	     <a href="#product/{{item.id}}" v-for="item in chaoshihui1"><img v-bind:src="'img/chaoshihui1/' + item.url" alt=""></a>
+	  </p>
+		<ul>
+			<li v-for="item in chaoshihui2">
+				<a href="#product/{{item.id}}">
+					<img v-bind:src="'img/chaoshihui2/' + item.url" alt="">
+				</a>
+			</li>
+		</ul>
+    </div>
+
+      <!-- 拖拽图 -->
+         <div class="swipe" id="slider2">
+			<ul class="swipe-wrap" id="carrousellis">
+				<li v-for="item in tuozhuaidata">
+					<a href="#/list/type/{{item.id}}">
+						<img v-bind:src="'img/tuozhuai/'+item.url" v-on:load='tuozhuai()'>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+     <div class="jinrong">
+          <div class="pinpaihui">
+	      <span class="liner1"></span>
+	      <p class="jinrongjie">金融街</p>
+	      <span class="liner2"></span>
+	</div>
+	<div class="main-touzi">
+      <p class="touzi">
+	     <a href="#product/{{item.id}}" v-for="item in touzi"><img v-bind:src="'img/touzi/' + item.url" alt=""></a>
+	  </p>
+		<ul>
+			<li v-for="item in licai">
+				<a href="#product/{{item.id}}">
+					<img v-bind:src="'img/licai/' + item.url" alt="">
+				</a>
+			</li>
+		</ul>
+
+		</div>
+     </div>
+       <div class="cainixihuan">
+           <div class="pinpaihui">
+	       <span class="liner1"></span>
+	       <p class="nixihuan">猜你喜欢</p>
+	      <span class="liner2"></span>
+	      </div>
+		<ul class="item-list">
+			<li class="clearfix" v-for="item in list">
+				<a href="#/product/{{item.id}}">
+					<img v-bind:src="'img/list/new/' + item.img" alt="">
+					<div class="description">
+						<h2>{{item.title}}</h2>
+						<p>
+							<span class="current-price">￥{{item.price}}</span>
+							<span class="current-comment">已售:{{item.comment}}</span>
+							<span class="current-like">☺ {{item.like}}</span>
+							<span class="current-id">{{item.id}}❤</span>
+						</p>
+					</div>
+				</a>
+			</li>
+		</ul>
+		</div>
+	<footer>
+       <span>热搜榜</span>
+       <span>旅图电子商务有限公司</span>
+       <span class="last-span">000-878608997</span>
+	</footer>
+	</section>
+	
+</script>
+<script type="text/template" id="tpl_list">
+	<section class="list" id="list">
+		<ul class="list-type clearfix">
+			<li v-for="item in type" v-on:click="changeType(item.key)">
+				<span>{{item.value}}</span>
+			</li>
+		</ul>
+		<ul class="item-list">
+			<li class="clearfix" v-for="item in list"">
+				<a href="#/product/{{item.id}} ">
+					<img   v-bind:src="'img/list/'+ item.img" alt="">
+					<div class="description">
+						<h2>{{item.title}}</h2>
+						<p>
+							<span class="current-price">￥{{item.price}}</span>
+							<span class="current-comment">已售:{{item.comment}}</span>
+							<span class="current-like">☺ {{item.like}}</span>
+							<span class="current-id">{{item.id}}❤</span>
+						</p>
+					</div>
+				</a>
+			</li>
+		</ul>
+		<div class="load-more" v-show="other.length" v-on:click="loadMore">
+			<span>查看其他{{other.length}}条信息</span>
+			<span class="arrow"></span>
+		</div>
+	</section>
+	<footer>
+       <span>热搜榜</span>
+       <span>旅图电子商务有限公司</span>
+       <span class="last-span">000-878608997</span>
+	</footer>
+</script>
+
+<script type="text/template" id="tpl_product">
+     
+	<section id="product" class="product">
+
+
+
+
+
+		<!-- <div class="product-image">
+			<img v-bind:src="'img/item/'+ list.src">
+		</div> -->
+		<div class="swipe product-image" id="slider3">
+			<ul class="swipe-wrap" id="carrousellis"> 
+				<li v-for="item in product">
+						<img v-bind:src="'img/item/'+item.url" v-on:load='tuozhuai()'>
+				</li>
+			</ul>
+			<ul class="circles">
+                <li class="cur"></li>
+                <li v-for="item in product"></li>
+			</ul>
+		</div>
+
+
+
+		<div class="product-sales clearfix">
+			<h3>{{list.title}}</h3>
+			<p>{{list.description}}</p>
+     	</div>
+		<div class="product-price">
+			<span class="price"><b>{{list.price}}</b>元</span>
+			<span class="black">{{list.sales | sales}}</span>
+			  <a href="#/login/">
+					<span class="btn">立即购买</span>
+				</a>
+			
+		</div>
+		<ul class="product-sales clearfix">
+			<li>支持自动退货</li>
+			<li>卖家包邮</li>
+     	</ul>
+		<div class="product-store module-item">
+			<h3 class="sub-title">店家信息</h3>
+			<div class="content">
+				<p>{{list.storeName}}</p>
+				<p>{{list.storeAdress}}</p>
+			</div>
+			<div class="item-footer">
+				<p>查看{{list.storeNum}}家分店</p>
+			</div>
+		</div>
+		<div class="product-note module-item">
+			<h3 class="sub-title">购买须知</h3>
+			<div class="content">
+				<ul>
+					<li>
+						<h4>有效期</h4>
+						<p>{{list.validateTime}}</p>
+					</li>
+					<li>
+						<h4>使用时间</h4>
+						<p>{{list.useTime}}</p>
+					</li>
+					<li>
+						<h4>使用规则</h4>
+						<ul>
+							<li v-for="item in list.rules">{{item}}</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+</script>
+<script type="text/template" id="tpl_login">
+    <div class="search" >   
+        <div class="go-back" v-on:click="goBack">
+          <span class="arrow"><span class="arrow white"></span></span>
+        </div>
+	    <span  class="login-nav1">登录旅图Show</span>
+	    <span  class="login-nav2">注册</span>
+	</div>
+	<section class="dengluyemian">
+		<div class="login-zhuce">
+			<label class="login-yonghu"><input  type="text" name="" placeholder="用户名/手机号/邮箱"></label>
+			<label class="login-mima">
+			<input   type="text" name="" placeholder="密码"></label>
+		</div>
+		<p class="login-footer">
+         <span class="miandenglu">七天之内免登录</span>
+         <span class="forgot"><a href="#">忘记密码？</a></span>
+		 </p>
+		<button class="login-btn">登录</button>
+		<div class="partner">
+	
+             <div class="pinpaihui">
+	         <span class="liner1"></span>
+	         <p class="jinrongjie">合作伙伴</p>
+	         <span class="liner2"></span>
+	         </div>
+	         <div>
+                 <ul>
+                    <li v-for="item in type"><img  v-bind:src="'img/partner/'+ item.url"></li>
+                 </ul>
+	         </div>
+		</div>
+	</section>
+</script>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript" src="js/swipe.js"></script>
+<script type="text/javascript" src="js/require-min.js" data-main="js/bootstrap.js"></script>
+<script type="text/javascript">
+   window.onscroll = function() {//为了保证兼容性，这里取两个值，哪个有值取哪一个　　
+ 	var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+　　
+}
+</script>
+</body>
+</html>
